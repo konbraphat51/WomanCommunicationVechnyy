@@ -12,7 +12,7 @@ const routes = [
 ]
 
 const router = VueRouter.createRouter({
-    base: "/",
+    base: "/WomanCommunicationVechnyy/",
     history: VueRouter.createWebHistory(),
     routes: routes
 })

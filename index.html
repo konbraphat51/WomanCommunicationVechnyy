@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>エディター</title>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@3.6.5/dist/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
+   </script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //vue3-sfc-loader初期設定
+        const options = {
+            moduleCache: {
+                vue: Vue
+            },
+
+            //read subdirectory vue component file.
+            async getFile(url) {
+                
+                const res = await fetch(url);
+                if ( !res.ok )
+                throw Object.assign(new Error(res.statusText + ' ' + url), { res });
+                return {
+                getContentData: asBinary => asBinary ? res.arrayBuffer() : res.text(),
+                }
+            },
+            
+            addStyle(textContent) {
+        
+                const style = Object.assign(document.createElement('style'), { textContent });
+                const ref = document.head.getElementsByTagName('style')[0] || null;
+                document.head.insertBefore(style, ref);
+            },
+        }
+        const { loadModule } = window["vue3-sfc-loader"];
+        
+        //Appコンポーネントをマウント
+        const app = Vue.createApp(
+            Vue.defineAsyncComponent(
+                () => loadModule("./src/components/App.vue", options)
+            ),
+        )
+        app.mount('#app');
+    </script>
+</body>
+</html>

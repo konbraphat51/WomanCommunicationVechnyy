@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import NGWordSetter from './NGWordSetter/NGWordSetter.vue';
+    import NGWordSetter from './NGWordSetter/NGWordSetter.vue';
 
     export default Vue.defineComponent({
         name: 'Initializer',

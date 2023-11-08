@@ -2,7 +2,7 @@
     <div id="Initializer">
         <NGWordSetter />
         <TextSetter />
-
+        
         <button id="PlayButton">Play</button>
     </div>
 </template>

@@ -10,5 +10,17 @@
         components: {
             //"COMPONENT": Vue.defineAsyncComponent(() => loadModule("PATH.vue", options))
         },
+        data(){
+            return {
+                words: []
+            }
+        },
+        methods:{
+            GetData(){
+                return {
+                    words: this.words
+                }
+            }
+        }
     })
 </script>

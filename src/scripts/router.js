@@ -1,6 +1,6 @@
 const router = VueRouter.createRouter({
     mode:"hash",
-    history: VueRouter.createWebHistory(),
+    history: VueRouter.createWebHashHistory(),
     routes: [
         {
             path: "/",

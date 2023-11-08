@@ -1,6 +1,7 @@
 const routes = [
     {
         path: "/WomanCommunicationVechnyy",
+        component: Vue.defineAsyncComponent(() => loadModule("src/components/EmptyRouter.vue", options)),
         children:[
             {
                 path: "/",

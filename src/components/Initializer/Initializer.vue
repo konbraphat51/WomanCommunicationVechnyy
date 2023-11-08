@@ -13,9 +13,9 @@ import NGWordSetter from './NGWordSetter/NGWordSetter.vue';
     export default Vue.defineComponent({
         name: 'Initializer',
         components: {
-    "TextSetter": Vue.defineAsyncComponent(() => loadModule("src/components/Initializer/TextSetter/TextSetter.vue", options)),
-    "NGWordSetter": Vue.defineAsyncComponent(() => loadModule("src/components/Initializer/NGWordSetter/NGWordSetter.vue", options)),
-    NGWordSetter
-},
+            "TextSetter": Vue.defineAsyncComponent(() => loadModule("src/components/Initializer/TextSetter/TextSetter.vue", options)),
+            "NGWordSetter": Vue.defineAsyncComponent(() => loadModule("src/components/Initializer/NGWordSetter/NGWordSetter.vue", options)),
+            NGWordSetter
+        },
     })
 </script>

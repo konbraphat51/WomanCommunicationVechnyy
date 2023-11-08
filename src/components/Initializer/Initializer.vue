@@ -2,8 +2,8 @@
     <div id="Initializer">
         <NGWordSetter />
         <TextSetter />
-
-        <button>Play</button>
+        
+        <button id="PlayButton">Play</button>
     </div>
 </template>
 
